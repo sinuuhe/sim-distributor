@@ -18,6 +18,18 @@ var distributorSchema = mongoose.Schema({
       type: String,
       required: true
     },
+    register_date: {
+      type: Number,
+      required: true
+    },
+    registered_by: {
+      type: Object,
+      required: true
+    },
+    city: {
+      type: String,
+      required: true
+    },
     sims: {
       type: Array,
       active: {
@@ -34,6 +46,14 @@ var distributorSchema = mongoose.Schema({
       },
       phone_number: {
         type: String,
+        required: true
+      },
+      register_date: {
+        type: Date,
+        required: true
+      },
+      registered_by: {
+        type: Object,
         required: true
       },
       _id: {

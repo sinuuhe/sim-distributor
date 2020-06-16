@@ -48,7 +48,7 @@ exports.view = (req, res, entity) => {
  * @param grant Grant that will be validate
  */
 exports.new = (req, res, entity) => {
-    var newEntity = new entity.model();
+    let newEntity = new entity.model();
 
     entity.properties.forEach(prop => {
         newEntity[prop] = req.body[prop]

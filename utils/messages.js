@@ -51,6 +51,16 @@ exports.messages = {
                 code: 1000,
                 status: 'error',
                 message: 'Couldn\'t store sims. Try again later'
+            },
+            couldNotSaveDistributor: {
+                code: 1001,
+                status: 'error',
+                message: 'Couldn\'t save distributor. Try again later'
+            },
+            couldNotGetSims: {
+                code: 1002,
+                status: 'error',
+                message: 'Couldn\'t get sims report. Try again later'
             }
         },
         success: {
@@ -83,6 +93,11 @@ exports.messages = {
                 code: 2005,
                 status: 'success',
                 message: 'SIMs cleared' 
+            },
+            simsRetrieved: {
+                code: 2006,
+                status: 'success',
+                message: 'SIMs retrieved' 
             }
         }
     }

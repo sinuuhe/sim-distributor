@@ -13,14 +13,22 @@ let bodyParser = require('body-parser');
 
 let mongoose = require('mongoose');
 
+const config = require('./config');
 //configure body oarser to handle post request
 
 app.use(bodyParser.json());
 
 //conect to mongoosde and set conection variable
-mongoose.connect('mongodb://localhost/sim-distributor', { useNewUrlParser: true, useUnifiedTopology: true });
 
-var db = mongoose.connection;
+mongoose.connect(config.config.databaseUri, { useNewUrlParser: true, useUnifiedTopology: true }); 
+
+mongoose.connection.on('connected', () => {
+    console.log('Mongoose is connected')
+})
+
+mongoose.connection.on('error', (error) => {
+    console.log('errorsaso!!!!', error)
+})
 
 app.use('/api', apiRoutes);
 

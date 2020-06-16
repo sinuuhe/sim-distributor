@@ -38,5 +38,8 @@ router.patch('/distributors/:id', userController.verifyToken, distributorControl
 router.put('/distributors/:id', userController.verifyToken, distributorController.update);
 router.delete('/distributors/:id', userController.verifyToken, distributorController.delete);
 
+router.get('/getSims', userController.verifyToken, distributorController.getSims);
+router.get('/getSims/:id', userController.verifyToken, distributorController.getSims);
+
 // Export API routes
 module.exports = router;

@@ -10,7 +10,10 @@ exports.list = {
             'name',
             'email',
             'phone_number',
-            'sims'
+            'sims',
+            'register_date',
+            'registered_by',
+            'city'
         ],
         messages: _messages.messages.distributor
     },
