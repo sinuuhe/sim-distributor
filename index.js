@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 //conect to mongoosde and set conection variable
 
-mongoose.connect(config.config.databaseUri, { useNewUrlParser: true, useUnifiedTopology: true }); 
+mongoose.connect(config.config.databaseUriDev, { useNewUrlParser: true, useUnifiedTopology: true }); 
 
 mongoose.connection.on('connected', () => {
     console.log('Mongoose is connected')

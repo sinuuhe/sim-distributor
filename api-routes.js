@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
 // Import controllers
 var distributorController = require('./controller/distributor-controller');
 var userController = require('./controller/user-controller');
+var simController = require('./controller/sim-controller');
 
 // User routes
 router.get('/users', userController.verifyToken, userController.index)
@@ -30,8 +31,6 @@ router.post('/users/login',userController.login);
 router.get('/distributors', userController.verifyToken, distributorController.index)
 router.post('/distributors', userController.verifyToken, distributorController.new);
 
-router.post('/distributors/pushSims/:id', userController.verifyToken, distributorController.pushSims);
-router.post('/distributors/clearSims/:id', userController.verifyToken, distributorController.clearSims);
 router.put('/distributors/updateSims/:id', userController.verifyToken, distributorController.updateSims);
 router.get('/distributors/:id', userController.verifyToken, distributorController.view);
 router.patch('/distributors/:id', userController.verifyToken, distributorController.update);
@@ -40,6 +39,15 @@ router.delete('/distributors/:id', userController.verifyToken, distributorContro
 
 router.get('/getSims', userController.verifyToken, distributorController.getSims);
 router.get('/getSims/:id', userController.verifyToken, distributorController.getSims);
+
+// Sims routes
+router.get('/sims', userController.verifyToken, simController.index)
+
+router.get('/sims/distributor/:id', userController.verifyToken, simController.getSimsByDistributorId);
+router.put('/sims/:id', userController.verifyToken, simController.update);
+router.put('/sims/phone/:phone', userController.verifyToken, simController.updatePhone);
+router.post('/sims/push/:id', userController.verifyToken, simController.pushSims);
+router.delete('/sims/clear/:id', userController.verifyToken, simController.clearSims);
 
 // Export API routes
 module.exports = router;

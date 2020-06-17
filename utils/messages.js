@@ -100,5 +100,30 @@ exports.messages = {
                 message: 'SIMs retrieved' 
             }
         }
+    },
+    sim: {
+        error: {},
+        success: {
+            simsRegistered: {
+                code: 2000,
+                status: 'success',
+                message: 'SIMs registered' 
+            },
+            simsCleared: {
+                code: 2001,
+                status: 'success',
+                message: 'SIMs cleared'
+            },
+            updated: {
+                code: 2002,
+                status: 'success',
+                message: 'SIMs updated'
+            },
+            retrieved: {
+                code: 2002,
+                status: 'success',
+                message: 'SIMs retrieved'
+            }
+        }
     }
 }

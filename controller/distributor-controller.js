@@ -89,6 +89,11 @@ exports.delete = (req, res) => {
     })
 };
 
+/**
+ * Add sims to a distributor
+ * @param req Request object
+ * @param res Response object
+ */
 exports.pushSims = (req, res) => {
     userValidator.validateUser(req.token, res, userTypes.admin)
     .then(response => {
@@ -137,6 +142,11 @@ exports.pushSims = (req, res) => {
     })  
 }
 
+/**
+ * Deletes all sims of a distributor
+ * @param req Request object
+ * @param res Response object
+ */
 exports.clearSims = (req, res) => {
     userValidator.validateUser(req.token, res, userTypes.admin)
     .then(response => {
@@ -166,6 +176,11 @@ exports.clearSims = (req, res) => {
     })  
 };
 
+/**
+ * Updates sim info
+ * @param req Request object
+ * @param res Response object
+ */
 exports.updateSims = (req, res) => {
     userValidator.validateUser(req.token, res, userTypes.admin)
     .then(response => {
@@ -195,7 +210,11 @@ exports.updateSims = (req, res) => {
     })  
 };
 
-// Handle sims search
+/**
+ * Handle the roports
+ * @param req Request object
+ * @param res Response object
+ */
 exports.getSims = (req, res) => {
     userValidator.validateUser(req.token, res, userTypes.admin)
     .then(response => {
@@ -279,6 +298,11 @@ exports.getSims = (req, res) => {
     })
 };
 
+/**
+ * Creates ids
+ * @param req Request object
+ * @param res Response object
+ */
 function createIdsForSims(sims, user) {
     let promise = new Promise((resolve, reject) => {
         sims.forEach(sim => {

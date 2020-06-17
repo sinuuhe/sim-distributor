@@ -1,5 +1,6 @@
 const Distributor = require('./distributor-model');
 const User = require('./user-model');
+const Sim = require('./sim-model');
 const _messages = require('../utils/messages');
 
 exports.list = {
@@ -10,7 +11,6 @@ exports.list = {
             'name',
             'email',
             'phone_number',
-            'sims',
             'register_date',
             'registered_by',
             'city'
@@ -27,5 +27,18 @@ exports.list = {
             'type'
         ],
         messages: _messages.messages.user
+    },
+    sim: {
+        model: Sim,
+        properties: [
+            'active',
+            'serial_number',
+            'activation_date',
+            'phone_number',
+            'register_date',
+            'registered_by',
+            'distributor_id'
+        ],
+        messages: _messages.messages.sim
     }
 }

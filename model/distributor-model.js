@@ -29,37 +29,6 @@ var distributorSchema = mongoose.Schema({
     city: {
       type: String,
       required: true
-    },
-    sims: {
-      type: Array,
-      active: {
-        type: Boolean,
-        required: false
-      },
-      serial_number: {
-        type: String,
-        required: false
-      },
-      activation_date: {
-        type: Date,
-        required: false
-      },
-      phone_number: {
-        type: String,
-        required: true
-      },
-      register_date: {
-        type: Date,
-        required: true
-      },
-      registered_by: {
-        type: Object,
-        required: true
-      },
-      _id: {
-        type: mongoose.Types.ObjectId,
-        required: true
-      }
     }
 });
 
